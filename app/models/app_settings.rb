@@ -4,7 +4,7 @@
 #
 # Table name: app_settings
 #
-#  id         :bigint           not null, primary key
+#  id         :integer          not null, primary key
 #  key        :string           not null
 #  value      :string           not null
 #  created_at :datetime         not null

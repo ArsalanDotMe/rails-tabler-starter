@@ -4,10 +4,10 @@
 #
 # Table name: user_roles
 #
-#  id       :bigint           not null, primary key
-#  role_id  :bigint           not null
-#  space_id :bigint           not null
-#  user_id  :bigint           not null
+#  id       :integer          not null, primary key
+#  role_id  :integer          not null
+#  space_id :integer          not null
+#  user_id  :integer          not null
 #
 class UserRole < ApplicationRecord
   belongs_to :user

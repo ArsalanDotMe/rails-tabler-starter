@@ -4,7 +4,7 @@
 #
 # Table name: users
 #
-#  id                     :bigint           not null, primary key
+#  id                     :integer          not null, primary key
 #  admin                  :boolean          default(FALSE)
 #  color_mode             :string
 #  color_scheme           :string
@@ -31,7 +31,7 @@
 #  unconfirmed_email      :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  invited_by_id          :bigint
+#  invited_by_id          :integer
 #
 class User < ApplicationRecord
   has_one_attached :avatar

@@ -2,7 +2,7 @@
 #
 # Table name: plans
 #
-#  id          :bigint           not null, primary key
+#  id          :integer          not null, primary key
 #  currency    :string           not null
 #  description :json
 #  duration    :string           not null

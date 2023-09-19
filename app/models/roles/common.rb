@@ -4,14 +4,14 @@
 #
 # Table name: roles
 #
-#  id          :bigint           not null, primary key
+#  id          :integer          not null, primary key
 #  name        :string
-#  permissions :jsonb            not null
+#  permissions :json             not null
 #  type        :string
 #  value       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  space_id    :bigint
+#  space_id    :integer
 #
 module Roles
   class Common < Role

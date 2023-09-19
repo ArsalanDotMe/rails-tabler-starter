@@ -3,17 +3,16 @@
 let args = process.argv.slice(2);
 let watch = args.includes('--watch')
 
-const { build } = require("esbuild");
-const { sassPlugin } = require("esbuild-sass-plugin");
+import { context } from 'esbuild'
+import { sassPlugin } from 'esbuild-sass-plugin'
 
-build({
+let ctx = await context({
   entryPoints: [
     "app/assets/stylesheets/application.scss",
     "app/assets/stylesheets/application-cool.scss",
     "app/assets/stylesheets/rails_admin.scss",
   ],
   bundle: true,
-  watch: watch,
   loader: {
     ".png": "dataurl",
     ".woff": "dataurl",
@@ -26,8 +25,11 @@ build({
   outdir: "app/assets/builds",
   plugins: [sassPlugin({ cssImports: true })],
 })
-  .then(() => console.log("⚡ Build complete! ⚡"))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+
+if (watch) {
+  console.log('Watching for changes...')
+  await ctx.watch()
+} else {
+  console.log('Building...')
+  await ctx.rebuild()
+}

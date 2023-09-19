@@ -44,6 +44,7 @@ Metrics/MethodLength:
 Metrics/BlockLength:
   CountComments: false
   Max: 5
+  Enabled: false
   # IgnoredMethods:
   #   - context
   #   - describe

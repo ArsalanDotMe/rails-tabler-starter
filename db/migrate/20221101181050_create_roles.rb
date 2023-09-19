@@ -6,7 +6,7 @@ class CreateRoles < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :value
       t.string :type
-      t.jsonb :permissions, null: false, default: '{}'
+      t.json :permissions, null: false, default: '{}'
       t.references :space, null: true, foreign_key: true
 
       t.timestamps
